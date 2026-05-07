@@ -81,7 +81,7 @@ const processSteps = [
   },
   {
     number: "3",
-    eyebrow: "WITHIN ONE WEEK",
+    eyebrow: "UNDER A MONTH",
     title: "Your Brand Playbook is delivered",
     body:
       "A clean 3-4 page document with everything we built, plus a one-page 'What Now?' section with channel direction and 2-3 messaging angles based on your specific audience and positioning.",
@@ -91,16 +91,17 @@ const processSteps = [
 const testimonials = [
   {
     quote:
-      "I'd rebuilt my website twice in two years and it still felt wrong. After these sessions I understood why -- I'd been building on the wrong foundation. The positioning work changed everything.",
-    author: "K.L.",
-    role: "Brand Consultant & Creative Strategist",
-  },
-  {
-    quote:
       "I thought I needed a rebrand. What I actually needed was clarity on who I'm for and why I'm different. The playbook I walked away with is the most useful document in my business.",
     author: "R.M.",
     role: "Business Coach, 5 Years in Practice",
   },
+  {
+    quote:
+      "I'd rebuilt my website twice in two years and it still felt wrong. After these sessions I understood why -- I'd been building on the wrong foundation. The positioning work changed everything.",
+    author: "K.L.",
+    role: "Brand Consultant & Creative Strategist",
+  },
+  
   {
     quote:
       "Within a month of getting clear on my positioning, I raised my prices and filled the first round. My brand was finally showing the value I was already delivering.",
@@ -141,7 +142,7 @@ const deliverables = [
   },
   {
     icon: SwatchBook,
-    title: "Brand Playbook delivered within one week (3-4 pages)",
+    title: "Brand Playbook delivered under a month (3-4 pages)",
     body: "A concise reference document that captures the strategy and language you can keep using.",
   },
   {
@@ -204,7 +205,7 @@ const legalLinks = [
 const socialLinks = [
   { label: "Instagram", href: "#", icon: InstagramIcon },
   { label: "LinkedIn", href: "#", icon: LinkedinIcon },
-  { label: "Email", href: "mailto:hello@skilandsteel.com", icon: Mail },
+  { label: "Email", href: "mailto:hello@silkandsteel.com", icon: Mail },
 ] as const;
 
 const faqColumns = [faqs.slice(0, 3), faqs.slice(3)];
@@ -735,12 +736,12 @@ function Offer() {
               Ready to commit?
             </div>
             <a
-              href="https://buy.stripe.com/00wbJ3ezC2WIg3NezSeUU01"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center rounded-[2px] bg-[var(--ss-bronze)] px-4 py-3.5 text-center font-[family:var(--font-cinzel)] text-[10px] font-semibold uppercase leading-5 tracking-[0.14em] text-[var(--ss-light)] no-underline shadow-[0_4px_20px_rgba(184,92,56,0.25)] transition hover:bg-[var(--ss-bronze-hover)] sm:px-6 sm:tracking-[0.2em]"
             >
-              Pay &amp; Book — $2,500
+              Book Your Session
             </a>
             <p style={{ fontSize: 12, color: "rgba(26,23,20,0.4)", lineHeight: 1.5, letterSpacing: "0.02em" }}>
               Secure Stripe checkout. You&apos;ll receive a scheduling link immediately after payment.
@@ -760,14 +761,14 @@ function Offer() {
               or
               <span style={{ flex: 1, height: 0.5, background: "rgba(61,46,40,0.15)" }} />
             </div>
-            <a
+            {/* <a
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center rounded-[2px] border border-[rgba(61,46,40,0.25)] bg-transparent px-4 py-3.5 text-center font-[family:var(--font-cinzel)] text-[10px] font-semibold uppercase leading-5 tracking-[0.12em] text-[var(--ss-dark-text)] no-underline transition hover:border-[var(--ss-bronze)] hover:text-[var(--ss-bronze)] sm:px-6 sm:tracking-[0.18em]"
             >
               Book a Free Discovery Call
-            </a>
+            </a> */}
             <p style={{ fontSize: 12, color: "rgba(26,23,20,0.4)", lineHeight: 1.5, letterSpacing: "0.02em" }}>
               A 20-minute call, no pitch. Just a conversation to see if it&apos;s a good fit.
             </p>
@@ -915,11 +916,11 @@ function Footer() {
             Have questions or ready to elevate your brand? We’d love to hear from you.
           </p>
           <a
-            href="mailto:hello@skilandsteel.com"
+            href="mailto:hello@silkandsteel.com"
             className="mt-5 inline-flex items-center gap-2 text-[15px] text-[var(--ss-light)] hover:text-[var(--ss-bronze-soft)]"
           >
             <Mail className="size-4" strokeWidth={1.8} />
-            hello@skilandsteel.com
+            hello@silkandsteel.com
           </a>
         </div>
       </div>

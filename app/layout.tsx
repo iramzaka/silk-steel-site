@@ -22,9 +22,9 @@ const interBody = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Skil & Steel | Elevated Branding for Ambitious Women Founders",
+  title: "Silk & Steel | Elevated Branding for Ambitious Women Founders",
   description:
-    "A premium editorial landing page for Skil & Steel, crafted to position women founders with clarity, elegance, and next-level brand presence.",
+    "A premium editorial landing page for Silk & Steel, crafted to position women founders with clarity, elegance, and next-level brand presence.",
 };
 
 export default function RootLayout({

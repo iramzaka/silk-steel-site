@@ -204,7 +204,7 @@ const legalLinks = [
 
 const socialLinks = [
   { label: "Instagram", href: "#", icon: InstagramIcon },
-  { label: "LinkedIn", href: "#", icon: LinkedinIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/eastonsmiskey/", icon: LinkedinIcon },
   { label: "Email", href: "mailto:hello@silkandsteel.com", icon: Mail },
 ] as const;
 

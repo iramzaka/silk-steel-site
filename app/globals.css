@@ -38,10 +38,12 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 76px;
   }
 
   body {
     min-height: 100vh;
+    overflow-x: hidden;
     background: var(--ss-cream);
     color: var(--ss-dark-text);
     font-family: var(--font-outfit), sans-serif;

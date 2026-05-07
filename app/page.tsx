@@ -40,14 +40,6 @@ const T = {
   cream:  "#F4F0EB",
 };
 
-const sectionBase: React.CSSProperties = {
-  padding: "96px 56px",
-};
-const innerWide: React.CSSProperties = {
-  maxWidth: 1180,
-  margin: "0 auto",
-};
-
 /* ─── Eyebrow ─── */
 const benefits = [
   {
@@ -297,7 +289,7 @@ function SectionEyebrow({
 }) {
   return (
     <p
-      className={`mb-5 font-[family:var(--font-cinzel)] text-[16px] tracking-[0.10em] ${
+      className={`mb-5 font-[family:var(--font-cinzel)] text-[12px] leading-6 tracking-[0.10em] sm:text-[14px] md:text-[16px] ${
         light ? "text-[var(--ss-muted)]" : "text-[var(--ss-bronze)]"
       }`}
     >
@@ -319,7 +311,7 @@ function CtaLink({
   className?: string;
 } & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "className">) {
   const base =
-    "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[4px] border text-[10px] font-semibold tracking-[0.22em] uppercase transition duration-300 ease-out will-change-transform hover:scale-[1.03] focus-visible:ring-2 focus-visible:ring-[var(--ss-bronze-soft)]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent";
+    "inline-flex max-w-full items-center justify-center gap-2 whitespace-nowrap rounded-[4px] border text-center text-[10px] font-semibold leading-[1.2] tracking-[0.18em] uppercase transition duration-300 ease-out will-change-transform hover:scale-[1.03] focus-visible:ring-2 focus-visible:ring-[var(--ss-bronze-soft)]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent sm:tracking-[0.22em]";
 
   const variantClass =
     variant === "primary"
@@ -343,16 +335,10 @@ function CtaLink({
 function BrandMark() {
   return (
     <a href="#top" className="inline-flex items-center">
-      <span
-        className={`relative 
-          
-        }`}
-      >
-      <span style={{ display: "flex", alignItems: "baseline", gap: 5, textDecoration: "none" }}>
+      <span className="flex items-baseline gap-1.5 no-underline">
         <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontWeight: 300, fontSize: 25, color: T.light, letterSpacing: "0.01em" }}>Silk</span>
         <span style={{ fontFamily: "var(--font-cormorant)", fontWeight: 200, fontSize: 17, color: T.light }}>&amp;</span>
         <span style={{ fontFamily: "var(--font-cinzel)", fontWeight: 600, fontSize: 16, letterSpacing: "0.18em", color: T.light, textTransform: "uppercase" }}>Steel</span>
-      </span>
       </span>
     </a>
   );
@@ -363,11 +349,11 @@ function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/18 bg-[rgba(20,13,9,0.98)] backdrop-blur-md">
-      <div className="mx-auto flex h-[68px] max-w-[1400px] items-center justify-between gap-3 px-4 sm:gap-6 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[64px] max-w-[1400px] items-center justify-between gap-3 px-4 sm:gap-6 sm:px-6 md:h-[68px] lg:px-8">
         <div className="shrink-0 lg:ml-[4px]">
           <BrandMark />
         </div>
-        <nav className="hidden items-center pt-2 gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 pt-1 xl:flex 2xl:gap-8">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -379,18 +365,20 @@ function Navbar() {
           ))}
         </nav>
         <div className="flex items-center gap-2 sm:gap-3">
-          <CtaLink
-            href={BOOKING_URL}
-            className="hidden -translate-y-[1px] px-4 py-3 font-semibold shadow-[0_10px_24px_rgba(182,101,56,0.18)] hover:scale-105 md:inline-flex md:px-5"
-          >
-            BOOK NOW - $2,500
-          </CtaLink>
+          <div className="hidden md:block">
+            <CtaLink
+              href={BOOKING_URL}
+              className="-translate-y-[1px] px-4 py-3 font-semibold shadow-[0_10px_24px_rgba(182,101,56,0.18)] hover:scale-105 md:px-5"
+            >
+              BOOK NOW - $2,500
+            </CtaLink>
+          </div>
           <button
             type="button"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen((value) => !value)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-[4px] border border-[var(--ss-soft-border)] bg-white/70 text-[var(--ss-dark-text)] transition hover:border-[var(--ss-bronze)] hover:text-[var(--ss-bronze)] lg:hidden"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[4px] border border-[var(--ss-soft-border)] bg-white/70 text-[var(--ss-dark-text)] transition hover:border-[var(--ss-bronze)] hover:text-[var(--ss-bronze)] xl:hidden"
           >
             <span className="relative block h-3.5 w-5">
               <span
@@ -419,9 +407,9 @@ function Navbar() {
           opacity: mobileMenuOpen ? 1 : 0,
         }}
         transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-        className="overflow-hidden border-t border-[var(--ss-soft-border)] bg-[rgba(245,241,236,0.98)] lg:hidden"
+        className="overflow-hidden border-t border-[var(--ss-soft-border)] bg-[rgba(245,241,236,0.98)] xl:hidden"
       >
-        <div className="space-y-2 px-4 py-4 sm:px-6">
+        <div className="max-h-[calc(100vh-64px)] space-y-2 overflow-y-auto px-4 py-4 sm:px-6 md:max-h-[calc(100vh-68px)]">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -432,7 +420,7 @@ function Navbar() {
               {item.label}
             </a>
           ))}
-          <CtaLink href={BOOKING_URL} className="mt-2 w-full px-4 py-3 sm:hidden">
+          <CtaLink href={BOOKING_URL} className="mt-2 w-full px-4 py-3">
             BOOK NOW <ArrowRight className="size-3.5" strokeWidth={1.7} />
           </CtaLink>
         </div>
@@ -445,7 +433,7 @@ function HeroSection() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-[var(--ss-ink)] pt-[72px] text-[var(--ss-light)]"
+      className="relative overflow-hidden bg-[var(--ss-ink)] pt-[64px] text-[var(--ss-light)] md:pt-[68px]"
     >
       <div className="absolute inset-0">
         <Image
@@ -453,13 +441,13 @@ function HeroSection() {
           alt="Founder in an office at dusk"
           fill
           priority
-          sizes="80vw"
+          sizes="100vw"
           className="object-cover object-[center_15%]"
         />
       </div>
       <div className="absolute inset-0 bg-[rgba(20,13,9,0.44)]" />
-      <div className="mx-auto min-h-[calc(100vh-72px)] max-w-[1400px]">
-        <div className="relative z-14 flex min-h-[calc(100vh-72px)] items-center px-5 py-8 sm:px-6 sm:py-10 md:px-6 md:py-12 lg:px-6 lg:py-14">
+      <div className="mx-auto min-h-[calc(100svh-64px)] max-w-[1400px] md:min-h-[calc(100svh-68px)]">
+        <div className="relative z-10 flex min-h-[calc(100svh-64px)] items-center px-5 py-8 sm:px-6 sm:py-10 md:min-h-[calc(100svh-68px)] md:px-6 md:py-12 lg:px-6 lg:py-14">
           <div className="flex w-full justify-center">
             <div className="w-full max-w-[1200px] text-center">
               <motion.div
@@ -703,40 +691,22 @@ function TestimonialSection() {
 
 function Offer() {
   return (
-    <section id="offer" style={{ background: T.cream, ...sectionBase, padding: "64px 56px 72px" }}>
-      <div style={innerWide}>
+    <section id="offer" className="bg-[var(--ss-cream)] px-4 py-14 text-[var(--ss-dark-text)] sm:px-6 md:py-16 lg:px-8 lg:py-[72px]">
+      <div className="mx-auto max-w-[1180px]">
         <SectionEyebrow>THE OFFER</SectionEyebrow>
-        <div style={{ display: "flex", alignItems: "baseline", gap: 16, marginBottom: 6, flexWrap: "wrap" }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-cormorant)",
-              fontWeight: 300,
-              fontSize: "clamp(2.1rem,3.7vw,3.2rem)",
-              lineHeight: 1.03,
-              color: T.night,
-              letterSpacing: "-0.03em",
-            }}
-          >
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-4">
+          <h2 className="font-[family:var(--font-cormorant)] text-[2.1rem] font-light leading-[1.04] text-[var(--ss-dark-text)] sm:text-[2.65rem] lg:text-[3.2rem]">
             Your Brand Clarity Session —
           </h2>
-          <span
-            style={{
-              fontFamily: "var(--font-cinzel)",
-              fontSize: "clamp(2rem,3.2vw,3rem)",
-              lineHeight: 1.03,
-              fontWeight: 600,
-              color: T.garnet,
-              letterSpacing: "-0.01em",
-            }}
-          >
+          <span className="font-[family:var(--font-cinzel)] text-[1.75rem] font-semibold leading-none text-[var(--ss-bronze)] sm:text-[2.25rem] lg:text-[3rem]">
             $2,500
           </span>
         </div>
-        <p style={{ fontSize: 12, color: "rgba(26,23,20,0.35)", letterSpacing: "0.1em", textTransform: "uppercase", fontFamily: "var(--font-cinzel)", marginBottom: 30 }}>
+        <p className="mt-3 font-[family:var(--font-cinzel)] text-[11px] uppercase leading-5 tracking-[0.1em] text-[var(--ss-dark-text)]/40 sm:text-[12px]">
           Full investment, paid at booking
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 370px", gap: 48, alignItems: "start" }}>
+        <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(310px,370px)] lg:items-start lg:gap-12">
           {/* deliverables */}
           <div>
             {deliverables.map((d) => (
@@ -760,41 +730,15 @@ function Offer() {
           </div>
 
           {/* sticky CTA */}
-          <div
-            style={{
-              position: "sticky",
-              top: 96,
-              display: "flex",
-              flexDirection: "column",
-              gap: 14,
-              padding: 24,
-              border: "1px solid rgba(61,46,40,0.12)",
-              background: "rgba(255,255,255,0.34)",
-              boxShadow: "0 18px 50px rgba(33,21,15,0.06)",
-            }}
-          >
+          <div className="flex min-w-0 flex-col gap-4 border border-[rgba(61,46,40,0.12)] bg-white/40 p-5 shadow-[0_18px_50px_rgba(33,21,15,0.06)] sm:p-6 lg:sticky lg:top-24">
             <div style={{ fontFamily: "var(--font-cinzel)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(26,23,20,0.4)", marginBottom: 4 }}>
               Ready to commit?
             </div>
             <a
               href="https://buy.stripe.com/00wbJ3ezC2WIg3NezSeUU01"
               target="_blank"
-  rel="noopener noreferrer"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                background: T.garnet,
-                color: T.light,
-                fontFamily: "var(--font-cinzel)",
-                fontSize: 10,
-                fontWeight: 600,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                textDecoration: "none",
-                padding: "14px 22px",
-                borderRadius: 2,
-                boxShadow: "0 4px 20px rgba(184,92,56,0.25)",
-              }}
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center rounded-[2px] bg-[var(--ss-bronze)] px-4 py-3.5 text-center font-[family:var(--font-cinzel)] text-[10px] font-semibold uppercase leading-5 tracking-[0.14em] text-[var(--ss-light)] no-underline shadow-[0_4px_20px_rgba(184,92,56,0.25)] transition hover:bg-[var(--ss-bronze-hover)] sm:px-6 sm:tracking-[0.2em]"
             >
               Pay &amp; Book — $2,500
             </a>
@@ -817,22 +761,10 @@ function Offer() {
               <span style={{ flex: 1, height: 0.5, background: "rgba(61,46,40,0.15)" }} />
             </div>
             <a
-              href="#"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                background: "transparent",
-                color: T.night,
-                fontFamily: "var(--font-cinzel)",
-                fontSize: 10,
-                fontWeight: 600,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                textDecoration: "none",
-                padding: "13px 22px",
-                border: "1px solid rgba(61,46,40,0.25)",
-                borderRadius: 2,
-              }}
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center rounded-[2px] border border-[rgba(61,46,40,0.25)] bg-transparent px-4 py-3.5 text-center font-[family:var(--font-cinzel)] text-[10px] font-semibold uppercase leading-5 tracking-[0.12em] text-[var(--ss-dark-text)] no-underline transition hover:border-[var(--ss-bronze)] hover:text-[var(--ss-bronze)] sm:px-6 sm:tracking-[0.18em]"
             >
               Book a Free Discovery Call
             </a>
@@ -1005,7 +937,7 @@ function FloatingSocialProof() {
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.65 }}
-      className="fixed bottom-[84px] left-1/2 z-40 w-[calc(100vw-2rem)] max-w-[260px] -translate-x-1/2 rounded-[4px] border border-[var(--ss-soft-border)] bg-[rgba(245,241,236,0.96)] p-3.5 shadow-[0_20px_55px_rgba(0,0,0,0.18)] backdrop-blur sm:left-auto sm:right-6 sm:translate-x-0 lg:bottom-6 lg:right-6"
+      className="fixed bottom-6 right-6 z-40 hidden w-[260px] rounded-[4px] border border-[var(--ss-soft-border)] bg-[rgba(245,241,236,0.96)] p-3.5 shadow-[0_20px_55px_rgba(0,0,0,0.18)] backdrop-blur xl:block"
     >
       <div className="flex items-start gap-3">
         <div className="mt-0.5 rounded-full border border-[var(--ss-soft-border)] bg-white p-2 text-[var(--ss-bronze)]">
@@ -1024,7 +956,7 @@ function FloatingSocialProof() {
 
 function StickyCTA() {
   return (
-    <div className="fixed inset-x-3 bottom-3 z-40">
+    <div className="fixed inset-x-3 bottom-3 z-40 hidden xl:block">
       <div className="mx-auto flex max-w-[560px] items-center justify-between gap-4 rounded-[6px] border border-[var(--ss-soft-border)] bg-[rgba(245,241,236,0.96)] p-3 shadow-[0_18px_45px_rgba(0,0,0,0.18)] backdrop-blur">
         <p className="hidden flex-1 text-[13px] leading-5 text-[var(--ss-dark-text)]/78 sm:block">
           Ready to elevate your brand and attract your next-level clients?

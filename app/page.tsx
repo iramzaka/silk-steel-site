@@ -335,7 +335,7 @@ function CtaLink({
 
 function BrandMark() {
   return (
-    <a href="#top" className="inline-flex items-center">
+    <a href="/" className="inline-flex items-center">
       <span className="flex items-baseline gap-1.5 no-underline">
         <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontWeight: 300, fontSize: 25, color: T.light, letterSpacing: "0.01em" }}>Silk</span>
         <span style={{ fontFamily: "var(--font-cormorant)", fontWeight: 200, fontSize: 17, color: T.light }}>&amp;</span>
@@ -897,6 +897,8 @@ function Footer() {
                 <a
                   key={item.label}
                   href={item.href}
+                  target="_blank"
+              rel="noopener noreferrer"
                   className="rounded-full border border-white/10 p-2 text-[var(--ss-light)]/75 transition hover:border-[var(--ss-bronze)] hover:text-[var(--ss-bronze-soft)]"
                   aria-label={item.label}
                 >

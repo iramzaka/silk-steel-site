@@ -1,26 +1,100 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-outfit);
+  --font-heading: var(--font-cormorant);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --ss-ink: #140d09;
+  --ss-ink-2: #110906;
+  --ss-cream: #f5f1ec;
+  --ss-bronze: #b66538;
+  --ss-bronze-soft: #d79770;
+  --ss-bronze-hover: #9f562d;
+  --ss-light: #f1e7de;
+  --ss-muted: #cdbfb4;
+  --ss-dark-text: #21150f;
+  --ss-soft-border: #e6d7cc;
+
+  --background: var(--ss-cream);
+  --foreground: var(--ss-dark-text);
+  --border: color-mix(in srgb, var(--ss-soft-border) 80%, transparent);
+  --ring: color-mix(in srgb, var(--ss-bronze) 55%, white 45%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--ss-cream);
+    color: var(--ss-dark-text);
+    font-family: var(--font-outfit), sans-serif;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+  }
+
+  a,
+  button {
+    outline: none;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--ss-bronze) 75%, white 25%);
+    color: white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.hero-beam {
+  background:
+    radial-gradient(circle at top left, rgba(244, 204, 159, 0.45), transparent 36%),
+    linear-gradient(160deg, rgba(252, 226, 190, 0.42) 0%, rgba(230, 168, 111, 0.08) 28%, rgba(0, 0, 0, 0) 62%);
+  filter: blur(8px);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.editorial-divider {
+  border-color: color-mix(in srgb, var(--ss-soft-border) 68%, transparent);
+}
+
+.soft-card {
+  box-shadow: 0 10px 32px rgba(33, 21, 15, 0.04);
+}
+
+.section-shell {
+  width: min(100%, 80rem);
+  margin-inline: auto;
+}
+
+.premium-card {
+  border: 1px solid color-mix(in srgb, var(--ss-soft-border) 88%, transparent);
+  background: color-mix(in srgb, white 68%, transparent);
+  box-shadow: 0 16px 40px rgba(33, 21, 15, 0.05);
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease,
+    background-color 300ms ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--ss-bronze) 28%, var(--ss-soft-border));
+  box-shadow: 0 22px 48px rgba(33, 21, 15, 0.09);
 }

@@ -864,10 +864,10 @@ function FinalBanner() {
           <h2 className="font-[family:var(--font-cormorant)] text-[clamp(2.3rem,3.8vw,3.35rem)] leading-[1.08] tracking-[-0.03em]">
             Easy growth starts with digging deep.
           </h2>
-          <CtaLink href="https://buy.stripe.com/00wbJ3ezC2WIg3NezSeUU01"  
+          <CtaLink href="https://cal.com/silkandsteel/20min?month=2026-06"  
           target="_blank"
           rel="noopener noreferrer" variant="ghost" className="mt-7 px-7 py-4">
-            PAY &amp; BOOK
+            Book now
           </CtaLink>
           <p className="mt-5 text-[14px] leading-6 text-[var(--ss-light)]/76">
             Book your 20-minute discovery call today.

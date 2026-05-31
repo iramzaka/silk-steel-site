@@ -173,7 +173,7 @@ const faqs = [
   {
     question: "What if I want more comprehensive brand strategy work?",
     answer:
-      "There's a larger engagement available that covers brand substance, messaging framework, and brand voice in full depth. This mini session is the entry point -- and the $2,500 investment applies toward the larger engagement if you decide to continue.",
+      "There's a larger engagement available that covers brand substance, messaging framework, and brand voice in full depth. This mini session is the entry point -- and the investment applies toward the larger engagement if you decide to continue.",
   },
   {
     question: "How quickly can we schedule?",
@@ -336,10 +336,9 @@ function CtaLink({
 function BrandMark() {
   return (
     <a href="/" className="inline-flex items-center">
-      <span className="flex items-baseline gap-1.5 no-underline">
-        <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontWeight: 300, fontSize: 25, color: T.light, letterSpacing: "0.01em" }}>Silk</span>
-        <span style={{ fontFamily: "var(--font-cormorant)", fontWeight: 200, fontSize: 17, color: T.light }}>&amp;</span>
-        <span style={{ fontFamily: "var(--font-cinzel)", fontWeight: 600, fontSize: 16, letterSpacing: "0.18em", color: T.light, textTransform: "uppercase" }}>Steel</span>
+      <span className="flex flex-col leading-none no-underline">
+        <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontWeight: 400, fontSize: 10, color: T.garnet, letterSpacing: "0.28em", textTransform: "uppercase" }}>THE</span>
+        <span style={{ fontFamily: "var(--font-cormorant)", fontWeight: 700, fontSize: 28, color: T.light, letterSpacing: "-0.02em" }}>Unedit</span>
       </span>
     </a>
   );
@@ -371,7 +370,7 @@ function Navbar() {
               href={BOOKING_URL}
               className="-translate-y-[1px] px-4 py-3 font-semibold shadow-[0_10px_24px_rgba(182,101,56,0.18)] hover:scale-105 md:px-5"
             >
-              BOOK NOW - $2,500
+              BOOK NOW
             </CtaLink>
           </div>
           <button
@@ -697,11 +696,8 @@ function Offer() {
         <SectionEyebrow>THE OFFER</SectionEyebrow>
         <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-4">
           <h2 className="font-[family:var(--font-cormorant)] text-[2.1rem] font-light leading-[1.04] text-[var(--ss-dark-text)] sm:text-[2.65rem] lg:text-[3.2rem]">
-            Your Brand Clarity Session —
+            Your Brand Clarity Session
           </h2>
-          <span className="font-[family:var(--font-cinzel)] text-[1.75rem] font-semibold leading-none text-[var(--ss-bronze)] sm:text-[2.25rem] lg:text-[3rem]">
-            $2,500
-          </span>
         </div>
         <p className="mt-3 font-[family:var(--font-cinzel)] text-[11px] uppercase leading-5 tracking-[0.1em] text-[var(--ss-dark-text)]/40 sm:text-[12px]">
           Full investment, paid at booking
@@ -743,9 +739,7 @@ function Offer() {
             >
               Book Your Session
             </a>
-            <p style={{ fontSize: 12, color: "rgba(26,23,20,0.4)", lineHeight: 1.5, letterSpacing: "0.02em" }}>
-              Secure Stripe checkout. You&apos;ll receive a scheduling link immediately after payment.
-            </p>
+           
             <div
               style={{
                 display: "flex",
@@ -757,9 +751,7 @@ function Offer() {
                 textTransform: "uppercase",
               }}
             >
-              <span style={{ flex: 1, height: 0.5, background: "rgba(61,46,40,0.15)" }} />
-              or
-              <span style={{ flex: 1, height: 0.5, background: "rgba(61,46,40,0.15)" }} />
+             
             </div>
             {/* <a
               href={BOOKING_URL}
@@ -870,7 +862,7 @@ function FinalBanner() {
           <CtaLink href="https://buy.stripe.com/00wbJ3ezC2WIg3NezSeUU01"  
           target="_blank"
           rel="noopener noreferrer" variant="ghost" className="mt-7 px-7 py-4">
-            PAY &amp; BOOK - $2,500
+            PAY &amp; BOOK
           </CtaLink>
           <p className="mt-5 text-[14px] leading-6 text-[var(--ss-light)]/76">
             Book your 20-minute discovery call today.
@@ -918,16 +910,16 @@ function Footer() {
             Have questions or ready to elevate your brand? We’d love to hear from you.
           </p>
           <a
-            href="mailto:hello@silkandsteel.com"
+            href="mailto:hello@theunedit.com"
             className="mt-5 inline-flex items-center gap-2 text-[15px] text-[var(--ss-light)] hover:text-[var(--ss-bronze-soft)]"
           >
             <Mail className="size-4" strokeWidth={1.8} />
-            hello@silkandsteel.com
+            hello@theunedit.com
           </a>
         </div>
       </div>
       <div className="mx-auto flex max-w-[1400px] flex-col gap-3 border-t border-white/10 px-4 py-4 text-[11px] text-[var(--ss-light)]/45 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <p>© 2026 Silk & Steel. All rights reserved.</p>
+        <p>© 2026 The Unedit. All rights reserved.</p>
        
       </div>
     </footer>

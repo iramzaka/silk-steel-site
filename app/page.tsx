@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import heroImage from "../New_Hero_Cover.png";
+import logoImage from "../LogoHeader.png";
 import { useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import {
@@ -18,6 +20,7 @@ import {
 import { ArrowLeft } from "lucide-react";
 
 const HERO_IMAGE_SRC = heroImage;
+const LOGO_IMAGE_SRC = logoImage;
 const BOOKING_URL = "https://cal.com/silkandsteel/20min";
 
 const navItems = [
@@ -335,12 +338,14 @@ function CtaLink({
 
 function BrandMark() {
   return (
-    <a href="/" className="inline-flex items-center">
-      <span className="flex flex-col leading-none no-underline">
-        <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontWeight: 400, fontSize: 10, color: T.garnet, letterSpacing: "0.28em", textTransform: "uppercase" }}>THE</span>
-        <span style={{ fontFamily: "var(--font-cormorant)", fontWeight: 700, fontSize: 28, color: T.light, letterSpacing: "-0.02em" }}>Unedit</span>
-      </span>
-    </a>
+    <Link href="/" className="inline-flex h-[52px] w-[118px] shrink-0 items-center" aria-label="The Unedit home">
+      <Image
+        src={LOGO_IMAGE_SRC}
+        alt="The Unedit"
+        sizes="118px"
+        className="h-full w-full select-none object-contain"
+      />
+    </Link>
   );
 }
 
